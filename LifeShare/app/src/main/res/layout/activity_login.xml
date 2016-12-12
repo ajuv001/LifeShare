@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,25 +8,45 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="lifeshare.mcod.com.lifeshare.views.LoginActivity">
+    tools:context="lifeshare.mcod.com.lifeshare.views.LoginActivity"
+    android:background="@drawable/bg_blue_green">
+
+    <ImageView android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="60dp"
+        android:src="@mipmap/logo"
+        android:layout_centerHorizontal="true"/>
 
     <!-- Login progress -->
-    <ScrollView
+<!--    <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent">-->
 
+        <LinearLayout
+            android:id="@+id/email_login_master_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/app_logo">
         <LinearLayout
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="30dp"
+            android:paddingTop="30dp">
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
 
-                <AutoCompleteTextView
+                <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -39,7 +59,8 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
 
                 <EditText
                     android:id="@+id/password"
@@ -54,7 +75,22 @@
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
+            <Button
+                android:id="@+id/btn_forgot_password"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/action_forgot"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:textAllCaps="false"/>
 
+
+        </LinearLayout>
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
@@ -63,10 +99,38 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
-
         </LinearLayout>
-    </ScrollView>
-
+<!--    </ScrollView>-->
+    <RelativeLayout
+        android:id="@+id/login_register_guest_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_register"
+            style="?android:textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_register"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:background="@null"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/btn_guest"
+            style="?android:textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_guest"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:textAllCaps="false"/>
+        </RelativeLayout>
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -75,4 +139,4 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-</LinearLayout>
+</RelativeLayout>
