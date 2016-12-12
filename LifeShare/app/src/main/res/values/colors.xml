@@ -7,4 +7,5 @@
     <color name="bg_blue">#548ed1</color>
     <color name="bg_green">#2ac3bd</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 </resources>

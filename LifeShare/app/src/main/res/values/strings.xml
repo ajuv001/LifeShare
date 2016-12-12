@@ -24,4 +24,10 @@
     <string name="action_register">Register</string>
     <string name="action_guest">Guest></string>
     <string name="action_forgot">Forgot Password?</string>
+    <string name="home_quote_string">It\'s not how much we give but how much love we put into giving."</string>
+    <string name="quote">&quot;</string>
+    <string name="motherTeresa">- Mother Teresa</string>
+    <string name="helping_hands">Helping Hands</string>
+    <string name="sharings">Sharings</string>
+    <string name="ngos">NGOs</string>
 </resources>

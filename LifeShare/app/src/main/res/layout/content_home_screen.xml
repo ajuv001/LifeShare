@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_home_screen"
@@ -11,6 +11,86 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="lifeshare.mcod.com.lifeshare.views.HomeScreen"
-    tools:showIn="@layout/app_bar_home_screen">
+    tools:showIn="@layout/app_bar_home_screen"
+    android:background="@drawable/bg_blue_green"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp">
+    <TextView android:id="@+id/txtQuotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        android:text="@string/quote"/>
+        <TextView android:id="@+id/txtQuotesMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:text="@string/home_quote_string"/>
+    </LinearLayout>
+    <TextView android:id="@+id/txtMotherTeresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:text="@string/motherTeresa"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"/>
 
-</RelativeLayout>
+    <TextView android:id="@+id/txtHelpingHandsLabel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:textSize="13sp"
+    android:text="230456"
+    android:layout_marginLeft="70dp"
+    android:layout_marginTop="60dp"/>
+    <TextView android:id="@+id/txtHelpingHandsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:text="@string/helping_hands"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView android:id="@+id/txtSharingsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:text="143556"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp"/>
+    <TextView android:id="@+id/txtSharingsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:text="@string/sharings"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView android:id="@+id/txtNGOsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:text="456"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp"/>
+    <TextView android:id="@+id/txtNGOsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:text="@string/ngos"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>

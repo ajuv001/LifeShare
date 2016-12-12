@@ -23,7 +23,6 @@
             </activity>
         <activity
             android:name=".views.HomeScreen"
-            android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
