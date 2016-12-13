@@ -40,4 +40,7 @@
     <string name="prompt_mobile">Mobile</string>
     <string name="txt_attachment">Attachment</string>
     <string name="address">882 &amp; 883, 8th Main Road,\nJ P Nagar 3rd Phase,\nNear SLV Hotel,\nBengaluru,\nKarnataka 560078</string>
+    <string name="fig_head">Life Share Footprints</string>
+    <string name="desc">I would like to share food for fifty pax \\nin memory of my father.</string>
+    <string name="date">12/Jan/2016    10:00 am</string>
 </resources>
