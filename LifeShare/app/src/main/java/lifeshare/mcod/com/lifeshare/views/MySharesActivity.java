@@ -74,7 +74,9 @@ public class MySharesActivity extends AppCompatActivity implements View.OnClickL
         int id=v.getId();
 
         if(id==R.id.tv_header_back){
-            startActivity(new Intent(MySharesActivity.this, HomeScreen.class));
+            Intent intent = new Intent(this, HomeScreen.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             finish();
         }
     }
