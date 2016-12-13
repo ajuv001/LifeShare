@@ -70,20 +70,28 @@ public class MySharesActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        BackPressed();
+    }
+
+    @Override
     public void onClick(View v) {
         int id=v.getId();
 
         if(id==R.id.tv_header_back){
-            Intent intent = new Intent(this, HomeScreen.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
-        }
+            BackPressed();
     }
+}
    /* public void moveBack(){
 
         startActivity(new Intent(MySharesActivity.this, HomeScreen.class));
     }*/
-
+private void BackPressed(){
+    Intent intent = new Intent(this, HomeScreen.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
+    finish();
+}
 
 }
