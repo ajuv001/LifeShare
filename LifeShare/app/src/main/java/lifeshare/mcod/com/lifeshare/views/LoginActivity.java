@@ -69,7 +69,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
-
     // UI references.
     private EditText mEmailView;
     private EditText mPasswordView;
@@ -91,12 +90,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+               /* if (id == R.id.login || id == EditorInfo.IME_NULL) {
 
-                    //attemptLogin();
+                    attemptLogin();
                     return true;
-                }
-                return false;
+                }*/
+                //attemptLogin();
+                return true;
             }
         });
 
@@ -105,7 +105,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 //attemptLogin();
+                if(mEmailView.getText().toString().equals("user"))
+                    MyApp.setLogin(0);
+                else if (mEmailView.getText().toString().equals("ngo"))
+                    MyApp.setLogin(1);
                 startActivity(new Intent(LoginActivity.this, HomeScreen.class));
+                finish();
             }
         });
         mBtnForgotPassword = (Button)findViewById(R.id.btn_forgot_password);

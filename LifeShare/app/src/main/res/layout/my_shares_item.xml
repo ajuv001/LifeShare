@@ -41,7 +41,7 @@
         android:textSize="16sp"
         android:textColor="@color/green"
         android:layout_alignParentRight="true"
-        android:text="fdgsadgds"/>
+        android:text=""/>
     <View android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"

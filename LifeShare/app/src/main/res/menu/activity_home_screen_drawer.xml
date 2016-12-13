@@ -4,7 +4,13 @@
     <item
         android:id="@+id/item_my_shares"
         android:title="My Shares"
-        app:showAsAction="never" />
+        app:showAsAction="never"
+        android:visible="false"/>
+    <item
+        android:id="@+id/item_shares"
+        android:title="Shares"
+        app:showAsAction="never"
+        android:visible="false"/>
     <item
         android:id="@+id/item_logout"
         android:title="Logout"

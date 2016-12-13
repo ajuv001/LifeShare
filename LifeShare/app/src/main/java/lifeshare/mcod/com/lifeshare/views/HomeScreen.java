@@ -56,6 +56,18 @@ public class HomeScreen extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Menu nav_Menu = navigationView.getMenu();
+        if(MyApp.getLogin() == 0)
+        {
+            nav_Menu.findItem(R.id.item_my_shares).setVisible(true);
+            nav_Menu.findItem(R.id.item_shares).setVisible(false);
+        }
+        else if(MyApp.getLogin() == 1)
+        {
+            nav_Menu.findItem(R.id.item_my_shares).setVisible(false);
+            nav_Menu.findItem(R.id.item_shares).setVisible(true);
+        }
     }
 
     @Override
@@ -99,7 +111,13 @@ public class HomeScreen extends AppCompatActivity
             case R.id.item_my_shares:
                 startActivity(new Intent(HomeScreen.this, MySharesActivity.class));
                 break;
+            case R.id.item_shares:
+                startActivity(new Intent(HomeScreen.this, NGOActivity.class));
+                break;
             case R.id.item_logout:
+                startActivity(new Intent(HomeScreen.this, LoginActivity.class));
+                MyApp.setLogin(-1);
+                finish();
                 break;
         }
 

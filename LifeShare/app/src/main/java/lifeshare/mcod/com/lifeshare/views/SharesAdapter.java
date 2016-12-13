@@ -44,6 +44,14 @@ public class SharesAdapter extends RecyclerView.Adapter<SharesAdapter.SharesView
         {
             holder.imgCategory.setImageResource(R.mipmap.cloths_color_ico);
         }
+        else if(list.get(position).getCategory() == 2)
+        {
+            holder.imgCategory.setImageResource(R.mipmap.households_color_ico);
+        }
+        else if(list.get(position).getCategory() == 3)
+        {
+            holder.imgCategory.setImageResource(R.mipmap.households_color_ico);
+        }
         if(list.get(position).getReceivedBy() != null )
             holder.txtReceivedBy.setText(list.get(position).getReceivedBy());
     }
