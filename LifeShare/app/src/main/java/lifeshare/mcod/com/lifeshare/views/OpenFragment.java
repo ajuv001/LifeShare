@@ -3,6 +3,7 @@ package lifeshare.mcod.com.lifeshare.views;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,8 @@ public class OpenFragment extends Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_my_shares, container, false);
         recyclerShares = (RecyclerView)view.findViewById(R.id.recyclerShares);
+        Toolbar toolbar=(Toolbar) view.findViewById(R.id.toolbar) ;
+        toolbar.setVisibility(View.GONE);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerShares.setLayoutManager(layoutManager);
         recyclerShares.setAdapter(new SharesAdapter(getData()));

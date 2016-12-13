@@ -53,7 +53,7 @@ private ImageView mtv_header_back;
             finish();
             return true;
         }else if(id== R.id.action_forward){
-            startActivity(new Intent(ShareDetailsActivity.this, NGOActivity.class));
+            startActivity(new Intent(ShareDetailsActivity.this, MySharesActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
