@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
     private Button mBtnForgotPassword;
     private Button mBtnRegister;
-    private Button mBtnGuest;
+    //private Button mBtnGuest;
     private Button mEmailSignInButton;
 
     @Override
@@ -105,23 +105,32 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 //attemptLogin();
-                if(mEmailView.getText().toString().equals("user"))
-                    MyApp.setLogin(0);
-                else if (mEmailView.getText().toString().equals("ngo"))
-                    MyApp.setLogin(1);
-                startActivity(new Intent(LoginActivity.this, HomeScreen.class));
-                finish();
+                if(mEmailView.getText().toString().equals("user") && mPasswordView.getText().toString().equals("password"))
+                    doLogin(0);
+                else if (mEmailView.getText().toString().equals("ngo") && mPasswordView.getText().toString().equals("password"))
+                    doLogin(1);
+                else
+                    Toast.makeText(LoginActivity.this,"Login failed. Please use 'user' for user login and 'ngo' for ngo login with password as 'password'.", Toast.LENGTH_LONG).show();
+
+
             }
         });
         mBtnForgotPassword = (Button)findViewById(R.id.btn_forgot_password);
-        mBtnGuest = (Button)findViewById(R.id.btn_guest);
+       // mBtnGuest = (Button)findViewById(R.id.btn_guest);
         mBtnRegister = (Button)findViewById(R.id.btn_register);
        /// mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
         mBtnForgotPassword.setOnClickListener(this);
-        mBtnGuest.setOnClickListener(this);
+       // mBtnGuest.setOnClickListener(this);
         mBtnRegister.setOnClickListener(this);
+    }
+
+    private void doLogin(int login)
+    {
+        MyApp.setLogin(login);
+        startActivity(new Intent(LoginActivity.this, HomeScreen.class));
+        finish();
     }
 
     /**
@@ -241,8 +250,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         {
             case R.id.btn_forgot_password:
                 break;
-            case R.id.btn_guest:
-                break;
+/*            case R.id.btn_guest:
+                break;*/
             case R.id.btn_register:
                 break;
         }

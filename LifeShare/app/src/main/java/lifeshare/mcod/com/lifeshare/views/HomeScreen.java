@@ -134,7 +134,14 @@ mFigureLayout=(LinearLayout) findViewById(R.id.figure_layout);
         {
             case R.id.fab:
                 //animateFAB();
-                startActivity(new Intent(HomeScreen.this, ShareDetailsActivity.class));
+                if(MyApp.getLogin() == 0)
+                {
+                    startActivity(new Intent(HomeScreen.this, ShareDetailsActivity.class));
+                }
+                else if(MyApp.getLogin() == 1)
+                {
+                    startActivity(new Intent(HomeScreen.this, NGOActivity.class));
+                }
                 break;
             case R.id.fabCloths:
                 break;
