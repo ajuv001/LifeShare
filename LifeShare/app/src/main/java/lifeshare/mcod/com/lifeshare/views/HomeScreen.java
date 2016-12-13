@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 
 import lifeshare.mcod.com.lifeshare.R;
 
@@ -22,8 +23,8 @@ public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private Boolean isFabOpen = false;
     private FloatingActionButton mFabHelpHand, mFabCloths, mFabFood, mFabHousehold, mFabStationary;
-    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
-
+    private Animation fab_open,fab_close,rotate_forward,rotate_backward,bounce;
+private LinearLayout mFigureLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +38,9 @@ public class HomeScreen extends AppCompatActivity
         mFabFood = (FloatingActionButton) findViewById(R.id.fabFood);
         mFabHousehold = (FloatingActionButton) findViewById(R.id.fabHousehold);
         mFabStationary = (FloatingActionButton) findViewById(R.id.fabStationary);
-
+mFigureLayout=(LinearLayout) findViewById(R.id.figure_layout);
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
+        bounce = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close);
         rotate_forward = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_forward);
         rotate_backward = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_backward);
@@ -47,7 +49,7 @@ public class HomeScreen extends AppCompatActivity
         mFabHousehold.setOnClickListener(this);
         mFabStationary.setOnClickListener(this);
         mFabHelpHand.setOnClickListener(this);
-
+        mFigureLayout.startAnimation(bounce);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

@@ -72,7 +72,7 @@ android:layout_marginTop="60dp">
             android:maxLines="4"
             android:lines="2"
             android:inputType="textMultiLine"
-            android:text="I would like to share food for fifty pax \nin memory of my father."
+            android:text="@string/desc"
             android:hint="@string/prompt_desc"
             android:maxLength="120" />
 
@@ -144,9 +144,8 @@ android:layout_marginTop="60dp">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="5"
-                android:text="12/Jan/2016    10:00 am"
-                android:hint="@string/prompt_date"
-                android:inputType="textEmailAddress" />
+                android:text="@string/date"
+                android:hint="@string/prompt_date" />
 
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
@@ -162,7 +161,6 @@ android:layout_marginTop="60dp">
                 android:maxLines="5"
                 android:hint="@string/prompt_donate"
                 android:text="Aju Vidhyadaran "
-                android:inputType="textEmailAddress"
                 android:maxLength="120" />
 
         </android.support.design.widget.TextInputLayout>
@@ -179,8 +177,6 @@ android:layout_marginTop="60dp">
                 android:maxLines="5"
                 android:hint="@string/prompt_mobile"
                 android:text="7981111100"
-
-                android:inputType="textEmailAddress"
                 android:maxLength="10" />
 
         </android.support.design.widget.TextInputLayout>

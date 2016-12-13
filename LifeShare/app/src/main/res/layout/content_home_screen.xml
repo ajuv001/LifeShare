@@ -41,15 +41,31 @@
         android:text="@string/motherTeresa"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="5dp"/>
-
+    <TextView android:id="@+id/lbl_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="21sp"
+        android:text="@string/fig_head"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="60dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/figure_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <TextView android:id="@+id/txtHelpingHandsLabel"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textColor="@color/white"
-    android:textSize="13sp"
+    android:textSize="25sp"
     android:text="230456"
     android:layout_marginLeft="70dp"
-    android:layout_marginTop="60dp"/>
+    android:layout_marginTop="10dp"/>
     <TextView android:id="@+id/txtHelpingHandsValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textSize="25sp"
         android:text="143556"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="20dp"/>
@@ -80,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="13sp"
+        android:textSize="25sp"
         android:text="456"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="20dp"/>
@@ -92,5 +108,6 @@
         android:text="@string/ngos"
         android:layout_marginLeft="70dp"
         android:layout_marginTop="5dp"/>
-
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
