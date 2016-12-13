@@ -30,4 +30,13 @@
     <string name="helping_hands">Helping Hands</string>
     <string name="sharings">Sharings</string>
     <string name="ngos">NGOs</string>
+    <string name="prompt_subject">Subject</string>
+    <string name="prompt_desc">Description</string>
+    <string name="txt_quantity">Quantity</string>
+    <string name="prompt_lovation">Location</string>
+    <string name="loc_change">CHANGE</string>
+    <string name="prompt_date"><![CDATA[Date & Time]]></string>
+    <string name="prompt_donate">Donated By</string>
+    <string name="prompt_mobile">Mobile</string>
+    <string name="txt_attachment">Attachment</string>
 </resources>

@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -25,7 +26,17 @@
         <activity
             android:name=".views.HomeScreen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        </activity>
         <activity android:name=".views.MySharesActivity"></activity>
+        <activity
+            android:name=".views.ShareDetailsActivity"
+            android:parentActivityName=".views.HomeScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".views.NGOActivity"
+            android:parentActivityName=".views.ShareDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
     </application>
 
 </manifest>
