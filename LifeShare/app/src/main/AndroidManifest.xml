@@ -25,7 +25,16 @@
         <activity
             android:name=".views.HomeScreen"
             android:theme="@style/AppTheme.NoActionBar">
-
+        </activity>
+        <activity
+            android:name=".views.ShareDetailsActivity"
+            android:parentActivityName=".views.HomeScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".views.NGOActivity"
+            android:parentActivityName=".views.ShareDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
