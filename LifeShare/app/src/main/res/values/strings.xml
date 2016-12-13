@@ -35,8 +35,9 @@
     <string name="txt_quantity">Quantity</string>
     <string name="prompt_lovation">Location</string>
     <string name="loc_change">CHANGE</string>
-    <string name="prompt_date"><![CDATA[Date & Time]]></string>
+    <string name="prompt_date">Date &amp; Time</string>
     <string name="prompt_donate">Donated By</string>
     <string name="prompt_mobile">Mobile</string>
     <string name="txt_attachment">Attachment</string>
+    <string name="address">882 &amp; 883, 8th Main Road,\nJ P Nagar 3rd Phase,\nNear SLV Hotel,\nBengaluru,\nKarnataka 560078</string>
 </resources>

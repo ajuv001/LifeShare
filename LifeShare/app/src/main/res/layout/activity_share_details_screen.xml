@@ -53,6 +53,7 @@ android:layout_marginTop="60dp">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/prompt_subject"
+            android:text="Share Food For 50 People"
             android:inputType="text"
             android:maxLines="1" />
 
@@ -67,10 +68,12 @@ android:layout_marginTop="60dp">
             android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:maxLines="5"
+            android:gravity="top"
+            android:maxLines="4"
+            android:lines="2"
+            android:inputType="textMultiLine"
+            android:text="I would like to share food for fifty pax \nin memory of my father."
             android:hint="@string/prompt_desc"
-            android:inputType="textEmailAddress"
             android:maxLength="120" />
 
     </android.support.design.widget.TextInputLayout>
@@ -92,6 +95,8 @@ android:layout_marginTop="60dp">
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_width="0dp"
             android:layout_weight="0.8"
+            android:max="100"
+            android:progress="50"
             android:layout_height="wrap_content"
             />
             <ImageView
@@ -112,10 +117,11 @@ android:layout_marginTop="60dp">
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="5"
-                android:imeOptions=""
+                android:maxLines="4"
+                android:lines="4"
+                android:inputType="textMultiLine"
                 android:hint="@string/prompt_lovation"
-                android:inputType="textEmailAddress"
+                android:text="@string/address"
                 android:maxLength="120" />
 
         </android.support.design.widget.TextInputLayout>
@@ -138,6 +144,7 @@ android:layout_marginTop="60dp">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="5"
+                android:text="12/Jan/2016    10:00 am"
                 android:hint="@string/prompt_date"
                 android:inputType="textEmailAddress" />
 
@@ -154,6 +161,7 @@ android:layout_marginTop="60dp">
                 android:layout_height="wrap_content"
                 android:maxLines="5"
                 android:hint="@string/prompt_donate"
+                android:text="Aju Vidhyadaran "
                 android:inputType="textEmailAddress"
                 android:maxLength="120" />
 
@@ -170,8 +178,10 @@ android:layout_marginTop="60dp">
                 android:layout_height="wrap_content"
                 android:maxLines="5"
                 android:hint="@string/prompt_mobile"
+                android:text="7981111100"
+
                 android:inputType="textEmailAddress"
-                android:maxLength="120" />
+                android:maxLength="10" />
 
         </android.support.design.widget.TextInputLayout>
         <TextView
