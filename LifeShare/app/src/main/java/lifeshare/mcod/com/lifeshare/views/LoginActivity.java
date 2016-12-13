@@ -29,13 +29,24 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import lifeshare.mcod.com.lifeshare.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static android.accounts.AccountManager.KEY_PASSWORD;
 
 /**
  * A login screen that offers login via email/password.
@@ -72,9 +83,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_share_details_screen);
         // Set up the login form.
-        mEmailView = (EditText) findViewById(R.id.email);
+       /* mEmailView = (EditText) findViewById(R.id.email);
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -105,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mBtnForgotPassword.setOnClickListener(this);
         mBtnGuest.setOnClickListener(this);
-        mBtnRegister.setOnClickListener(this);
+        mBtnRegister.setOnClickListener(this);*/
     }
 
     /**
@@ -113,51 +124,32 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
-        if (mAuthTask != null) {
-            return;
+    private void attemptLogin() {StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://simplifiedcoding.16mb.com/UserRegistration/volleyRegister.php",
+            new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Toast.makeText(LoginActivity.this,response,Toast.LENGTH_LONG).show();
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                }
+            }){
+        @Override
+        protected Map<String,String> getParams(){
+            Map<String,String> params = new HashMap<String, String>();
+            params.put("username","test");
+            params.put("password","tes123");
+            params.put("email", "email");
+            return params;
         }
 
-        // Reset errors.
-        mEmailView.setError(null);
-        mPasswordView.setError(null);
+    };
 
-        // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
-
-        boolean cancel = false;
-        View focusView = null;
-
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
-            cancel = true;
-        }
-
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
-            cancel = true;
-        }
-
-        if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
-            focusView.requestFocus();
-        } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
-        }
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
     private boolean isEmailValid(String email) {
