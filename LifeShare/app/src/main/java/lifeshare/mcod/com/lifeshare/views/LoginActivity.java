@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-       /* mEmailView = (EditText) findViewById(R.id.email);
+        mEmailView = (EditText) findViewById(R.id.email);
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mBtnForgotPassword.setOnClickListener(this);
         mBtnGuest.setOnClickListener(this);
-        mBtnRegister.setOnClickListener(this);*/
+        mBtnRegister.setOnClickListener(this);
     }
 
     /**
